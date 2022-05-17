@@ -1,0 +1,71 @@
+<!--Author: Nilesh Bommisetty-->
+<!-- This Html file will list all the data which was present in DataBase-->
+
+<br>
+<h2 class="text-center">    Survey List</h2>
+<br>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> First Name</th>
+            <th> Last Name</th>
+            <th> Street Address</th>
+            <th> City</th>
+            <th> State</th>
+            <th> Zip</th>
+            <th> URL</th>
+            <th> Telephone</th>
+            <th> Email</th>
+            <th> DOS</th>
+            <th> Liked Most</th>
+            <th> Grad Month</th>
+            <th> Grad Year</th>
+            <th> Interested</th>
+            <th> Recommendation</th>
+            <th> Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let student of students" >
+            <td> {{ student.firstName }} </td>
+            <td> {{ student.lastName }} </td>
+            <td> {{ student.streetAddress }} </td>
+            <td> {{ student.city }} </td>
+            <td> {{ student.state }} </td>
+            <td> {{ student.zip }} </td>
+            <td> {{ student.url }} </td>
+            <td> {{ student.telphone }} </td>
+            <td> {{ student.email }} </td>
+            <td> {{ student.dos }} </td>
+            <td> {{ student.likedMost }} </td>
+            <td> {{ student.gradMonth }} </td>
+            <td> {{ student.gradYear }} </td>
+            <td> {{ student.interested }} </td>
+            <td> {{ student.recommendation }} </td>
+            <td> {{ student.comments }} </td>
+        </tr>
+    </tbody>
+</table>
+
+<!--<div class="w3-container">
+    <div *ngFor = "let student of students">
+        <div class="w3-container">
+            <label>First Name : </label> {{ student.firstName }} <br>
+            <label>Last Name : </label>  {{ student.lastName }}  <br>
+            <label>Street Address : </label> {{ student.streetAddress }} <br>
+            <label>City : </label> {{ student.city }} <br>
+            <label>State : </label> {{ student.state }} <br>
+            <label>Zip : </label>{{ student.zip }} <br>
+            <label>URL : </label> {{ student.url }} <br>
+            <label>Telephone : </label>{{ student.telphone }} <br>
+            <label>Email : </label>{{ student.email }} <br>
+            <label>Date Of Survey : </label>{{ student.dos }} <br>
+            <label>Liked Most : </label>{{ student.likedMost }} <br>
+            <label>Grad Month : </label>{{ student.gradMonth }} <br>
+            <label>Grad Year : </label>{{ student.gradYear }} <br>
+            <label>Interested : </label>{{ student.interested }}  <br>
+            <label>Recommendation : </label> {{ student.recommendation }}<br>
+            <label>Comments : </label> {{ student.comments }} <br>
+        </div><br><br><br>
+    </div>
+</div> -->

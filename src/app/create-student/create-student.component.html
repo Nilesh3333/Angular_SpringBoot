@@ -1,0 +1,98 @@
+<!-- author: Nilesh Bommisetty -->
+<!-- Creating component for Survey form -->
+
+<div class="w3-container" style="background-color:#D3D3D3;">
+    <h2 class="text-center">Survey Form</h2>
+<form id = "form" autocomplete="on" (ngSubmit) = "onSubmit()" >
+    <div>
+        <label>First Name <span class="required">*</span> : </label>
+        <input type="text" id="firstName" [(ngModel)] = "student.firstName" name="firstName" placeholder="Nilesh" autofocus="on" required><br><br>
+        <label>Last Name <span class="required">*</span> : </label>
+        <input type="text" id="lastName" [(ngModel)] = "student.lastName" name="lastName" placeholder="Bommisetty" autofocus="on" required><br><br>
+        <label>Street Address <span class="required">*</span> : </label>
+        <input type="text" id="streetAddress" placeholder="4313 Ramona Dr" [(ngModel)] = "student.streetAddress" name="streetAddress" required><br><br>
+        <label>Zip <span class="required">*</span> : </label>
+        <input type="number" id="zip" [(ngModel)] = "student.zip" name="zip"  placeholder="22030" required> <br><br>
+        <label>City <span class="required">*</span> : </label>
+        <input type="text" id="city" placeholder="Fairfax" [(ngModel)] = "student.city" name="city" required><br><br>
+        <label>State <span class="required">*</span> : </label>
+        <input type="text" id="state" placeholder="VA" [(ngModel)] = "student.state" name="state" required><br><br>
+        <label>Email <span class="required">*</span> : </label>
+        <input type="email" id="email"  [(ngModel)] = "student.email" name="email" placeholder="abc@gmu.edu" required><br><br>
+        <label>Phone Number <span class="required">*</span> : </label>
+        <input type="tel" id="telphone" name="telphone" [(ngModel)] = "student.telphone" placeholder="1234567890" required><br><br>
+        <label>URL : </label><input type="url" id="url" [(ngModel)] = "student.url" name="url" placeholder="www.w3.com" required><br><br>
+        <label>Date Of Survey <span class="required">*</span> :</label>
+        <input type="date" id="dos" [(ngModel)] = "student.dos" name="dos" required><br><br>
+    </div>
+
+    <div>
+        <h3>Please select the checkboxs which you liked the most about the campus</h3>
+        <div class="w3-col w3-container" style="width: 100%">
+            <span *ngFor="let option of liked">
+                <label>
+                    <input class="inputer" type="checkbox" name="likedMost" value="" [(ngModel)]="option.checked" />
+                    {{option.name}}
+                </label><br>
+            </span>
+
+        </div>
+    </div>
+    
+    <div>
+        <h3>Please select the option which makes you intrested in the University</h3>
+        <div class="w3-col w3-container" style="width: 100%">
+            <span *ngFor="let radioOption of radioOptions" >
+                <label>
+                    <input class="inputer" name="interested" type="radio" value="{{radioOption}}" [(ngModel)] = "student.interested" required />
+                    {{radioOption}}
+                </label><br>
+            </span>
+        </div>
+    </div>
+    <br>
+    <div>
+        <label for="Graduation_Month">Graduation Month <span class="required">*</span> :</label>
+        <input list="months" [(ngModel)] = "student.gradMonth" name="gradMonth" id="gradMonth" placeholder="February" required>
+        <datalist id="months">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">               
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <input type="text" id="gradYear" [(ngModel)] = "student.gradYear" name="gradYear" placeholder="2022" required> <br><br>
+    </div>
+
+    <div>
+        <label>How likely will you recommend this school to other prospective students <span class="required">*</span> : </label>
+        <select name="recommend" id="recommend" [(ngModel)] = "student.recommendation">
+            <option value="Very_Likely">Very Likely</option>
+            <option value="Likely">Likely</option>
+            <option value="Unlikely">Unlikely</option>
+        </select>
+        <br><br><br>
+    </div>
+
+
+    <div class="last">
+        <textarea name="comments" [(ngModel)] = "student.comments" rows="5" cols="100" placeholder="Additional Comments"></textarea> <br><br><br>
+        <div class="w3-row">
+            <div class="w3-container w3-quarter" style=padding-left:20%>
+                <input type="submit">
+            </div>
+            <div class="w3-container w3-quarter" style=padding-left:5%>
+                <input type="button" value="cancel"><br><br>
+            </div>
+          </div> 
+    </div>
+
+</form>
+</div>
