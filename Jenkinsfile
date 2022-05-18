@@ -11,10 +11,10 @@ pipeline {
         }
         stage('BuildAngular') {
             steps {
-            	dir('\') {
+       
                     
 					sh 'ng build'
-            	}
+           
             }
         }
         
