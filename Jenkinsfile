@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PROJECT_ID = 'swe642'
+        PROJECT_ID = 'Angular_SpringBoot'
     }
     stages {
         stage("Checkout code") {
