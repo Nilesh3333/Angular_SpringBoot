@@ -11,7 +11,7 @@ pipeline {
         }
         stage('BuildAngular') {
             steps {
-            	dir('/') {
+            	dir('\') {
                     
 					sh 'ng build'
             	}
